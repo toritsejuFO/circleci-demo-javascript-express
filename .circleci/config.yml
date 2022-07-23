@@ -14,7 +14,7 @@ workflows:
   version: 2
   build:
     jobs:
-      - save_hello_world_output
+      - run_print_pipeline_id_command
 
 jobs:
   run_print_pipeline_id_command:
