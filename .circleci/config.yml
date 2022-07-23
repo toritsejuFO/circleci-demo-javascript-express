@@ -1,5 +1,9 @@
 version: 2.1
 
+base_img: &base_img
+  docker:
+    - image: cimg/base:stable
+
 workflows:
   version: 2
   build:
@@ -11,8 +15,7 @@ workflows:
 
 jobs:
   save_hello_world_output:
-    docker:
-      - image: cimg/base:stable
+    <<: *base_img
     steps:
       - checkout
       - run: mkdir -p /tmp/workspace && touch $_/output.txt
@@ -24,8 +27,7 @@ jobs:
           paths: [output.txt]
 
   print_output_file:
-    docker:
-      - image: cimg/base:stable
+    <<: *base_img
     steps:
       - checkout
       - attach_workspace:
