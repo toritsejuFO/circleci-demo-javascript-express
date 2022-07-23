@@ -8,17 +8,17 @@ commands:
   print_pipeline_id:
     description: Print workflow id
     parameters:
-      workflow_id:
+      id:
         type: string
     steps:
-      - run: echo << parameters.workflow_id >>
+      - run: echo << parameters.id >>
 
 workflows:
   version: 2
   build:
     jobs:
-      - run_print_pipeline_id_command:
-          workflow_id: << pipeline.id >>
+      - run_print_pipeline_id_command::
+          id: << pipeline.id >>
 
 jobs:
   run_print_pipeline_id_command:
