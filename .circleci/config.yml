@@ -32,5 +32,4 @@ jobs:
           at: /tmp/workspace
       - run:
           name: Print output file content
-          command: cat output.txt
-
+          command: cat /tmp/workspace/output.txt
