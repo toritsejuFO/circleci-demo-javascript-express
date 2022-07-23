@@ -4,7 +4,7 @@ base_img: &base_img
   docker:
     - image: cimg/base:stable
 
-command:
+commands:
   print_pipeline_id:
     description: Print workflow id
     steps:
