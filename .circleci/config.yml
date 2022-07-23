@@ -15,7 +15,7 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      # - run: mkdir -p /tmp/workspace && touch $_/output.txt
+      - run: mkdir -p /tmp/workspace && touch $_/output.txt
       - run:
           name: Save hello world output to a file
           command: echo "hello world" >> /tmp/workspace/output.txt
