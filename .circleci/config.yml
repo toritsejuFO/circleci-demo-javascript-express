@@ -15,13 +15,13 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
-      - run: mkdir -p /tmp/workspace && touch $_/output.txt
+      # - run: mkdir -p /tmp/workspace && touch $_/output.txt
       - run:
           name: Save hello world output to a file
           command: echo "hello world" >> /tmp/workspace/output.txt
       - persist_to_workspace:
           root: /tmp/workspace
-          paths: [/output.txt]
+          paths: [output.txt]
 
   print_output_file:
     docker:
